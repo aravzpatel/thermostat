@@ -31,6 +31,7 @@ describe('Thermostat', function() {
       expect(thermostat.temp).toEqual(32);
     });
   });
+
   describe("If power saving is on", function(){
     it("will allow the temp to only go to 25", function(){
       thermostat.powerSaving = true
@@ -38,4 +39,37 @@ describe('Thermostat', function() {
       expect(thermostat.temp).toEqual(25);
     });
   });
+
+  describe('power saving mode can be turned off', function(){
+    it('turns from true to false', function(){
+      thermostat.changeMode()
+      expect(thermostat.powerSaving).toEqual(false)
+    });
+  })
+
+  describe('#reset function', function(){
+    it('resets the thermostat to 20', function(){
+      thermostat.reset();
+      expect(thermostat.temp).toEqual(20);
+    });
+  });
+
+  describe('#usage function', function(){
+    it('the temperature is 15 and it returns low-usage', function(){
+      thermostat.down(5);
+      expect(thermostat.usage()).toEqual('low-usage');
+    });
+    
+    it('the temperature is 23 and it returns medium-usage', function(){
+      thermostat.up(3);
+      expect(thermostat.usage()).toEqual('medium-usage');
+    });
+
+    it('the temperature is 26 and it returns high-usage', function(){
+      thermostat.changeMode();
+      thermostat.up(6);
+      expect(thermostat.usage()).toEqual('high-usage');
+    });
+  });
+
 });
