@@ -1,26 +1,41 @@
 <!DOCTYPE html>
   <head>
+    <link rel='stylesheet' href='css/style.css' type='text/css'>
   </head>
   <body>
     <h1 id='temperature_display'>The thermostat is at:</h1>
     <h3 id='usage_type'>You're usage is:</h3>
 
-    <form id='up'>
-      <label for='up'>Do you want to make it hotter?</label>
-      <input type='text' name='up'>
-      <input type='submit' name='submit'>
-    </form>
+    <div class="hotter-container">
+      <div class="hotter">
+        <form id='up'>
+        <label for='up'>Do you want to make it hotter?</label>
+          <br></br>
+        <input type='text' name='up'>
+          <br></br>
+        <input type='submit' name='submit' class='button'>
+        </form>
+      </div>
+    </div>
 
-    <form id='down'>
-      <label for='down'>Do you want to make it colder?</label>
-      <input type='text' name='down'>
-      <input type='submit' name='submit'>
-    </form>
+    <div class="colder-container">
+      <div class="colder">
+        <form id='down'>
+          <label for='down'>Do you want to make it colder?</label>
+          <br></br>
+          <input type='text' name='down'>
+          <br></br>
+          <input type='submit' name='submit'class='button'>
+        </form>
+      </div>
+    </div>
 
     <h3 id='power_mode'>Power mode is:</h3>
-    <button id='mode_changer'>Change mode</button>
-    <br></br>
-    <button id='reset'>Reset</button>
+    <div class="tile-div">
+      <button class='button-mode' id='mode_changer' style="background: url('./hell.jpeg'); width: 100px; height: 50px; border: 0;">Change mode</button>
+      <br></br>
+      <button class='button-mode' id='reset' style="background: url('./bender.jpeg'); width: 100px; height: 50px; border: 0;">Reset</button>
+    </div>
 
     <script src="src/thermostat.js" async defer></script>
   </body>
