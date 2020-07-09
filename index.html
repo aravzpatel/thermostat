@@ -1,7 +1,10 @@
 <!DOCTYPE html>
   <head>
     <link rel='stylesheet' href='css/style.css' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="myjquery.js"></script>
   </head>
+
   <body>
     <h1 id='temperature_display'>The thermostat is at:</h1>
     <h3 id='usage_type'>You're usage is:</h3>
@@ -13,7 +16,7 @@
           <br></br>
         <input type='text' name='up'>
           <br></br>
-        <input type='submit' name='submit' class='button'>
+        <input type='submit' name='submit' id="hot-button" class='button'>
         </form>
       </div>
     </div>
@@ -25,7 +28,7 @@
           <br></br>
           <input type='text' name='down'>
           <br></br>
-          <input type='submit' name='submit'class='button'>
+          <input type='submit' name='submit'class='button' id="cold-button">
         </form>
       </div>
     </div>
